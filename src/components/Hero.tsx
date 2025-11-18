@@ -3,6 +3,13 @@ import { Shield, Heart, Lock } from "lucide-react";
 import lawyerPortrait from "@/assets/lawyer-portrait.jpg";
 
 export const Hero = () => {
+  const scrollToForm = () => {
+    const formSection = document.getElementById('contact-form');
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Grid Pattern Background */}
@@ -37,7 +44,7 @@ export const Hero = () => {
               </div>
             </div>
             
-            <Button variant="hero" size="lg" className="text-base hover:scale-105 transition-all duration-300">
+            <Button variant="hero" size="lg" className="text-base hover:scale-105 transition-all duration-300" onClick={scrollToForm}>
               Quero avaliar meu caso
             </Button>
           </div>
