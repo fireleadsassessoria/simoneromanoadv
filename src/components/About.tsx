@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 
 export const About = () => {
   return (
-    <section className="py-24 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-background">
+      <div className="container mx-auto px-4 animate-fade-in-up">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-block mb-4">
             <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20">
@@ -22,7 +22,7 @@ export const About = () => {
         </div>
         
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <Card className="p-8 bg-card border-border hover:border-primary/50 transition-all">
+          <Card className="p-8 bg-card border-border hover:border-primary/50 transition-all hover:scale-105 duration-300">
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
               <Badge className="w-6 h-6 text-primary" />
             </div>
@@ -32,7 +32,7 @@ export const About = () => {
             </p>
           </Card>
           
-          <Card className="p-8 bg-card border-border hover:border-primary/50 transition-all">
+          <Card className="p-8 bg-card border-border hover:border-primary/50 transition-all hover:scale-105 duration-300">
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
               <CheckCircle2 className="w-6 h-6 text-primary" />
             </div>
@@ -42,7 +42,7 @@ export const About = () => {
             </p>
           </Card>
           
-          <Card className="p-8 bg-card border-border hover:border-primary/50 transition-all">
+          <Card className="p-8 bg-card border-border hover:border-primary/50 transition-all hover:scale-105 duration-300">
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
               <Shield className="w-6 h-6 text-primary" />
             </div>

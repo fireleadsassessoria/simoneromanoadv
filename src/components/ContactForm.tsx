@@ -52,8 +52,8 @@ export const ContactForm = () => {
 
   return (
     <>
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4 animate-fade-in-up">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
               <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
@@ -78,8 +78,8 @@ export const ContactForm = () => {
               </div>
 
               <div>
-                <Label htmlFor="name" className="text-destructive">
-                  Nome completo *
+                <Label htmlFor="name">
+                  Nome completo <span className="text-primary">*</span>
                 </Label>
                 <Input
                   id="name"
@@ -92,8 +92,8 @@ export const ContactForm = () => {
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <Label htmlFor="phone" className="text-destructive">
-                    Telefone com WhatsApp *
+                  <Label htmlFor="phone">
+                    Telefone com WhatsApp <span className="text-primary">*</span>
                   </Label>
                   <Input
                     id="phone"
@@ -105,8 +105,8 @@ export const ContactForm = () => {
                   />
                 </div>
                 <div>
-                  <Label htmlFor="email" className="text-destructive">
-                    E-mail *
+                  <Label htmlFor="email">
+                    E-mail <span className="text-primary">*</span>
                   </Label>
                   <Input
                     id="email"
@@ -120,8 +120,8 @@ export const ContactForm = () => {
               </div>
 
               <div>
-                <Label className="text-destructive mb-3 block">
-                  Qual é o seu principal problema hoje? *
+                <Label className="mb-3 block">
+                  Qual é o seu principal problema hoje? <span className="text-primary">*</span>
                 </Label>
                 <RadioGroup name="main_problem" required className="space-y-3">
                   <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-colors">
@@ -158,8 +158,8 @@ export const ContactForm = () => {
               </div>
 
               <div>
-                <Label className="text-destructive mb-3 block">
-                  Qual o valor aproximado das dívidas/empréstimos? *
+                <Label className="mb-3 block">
+                  Qual o valor aproximado das dívidas/empréstimos? <span className="text-primary">*</span>
                 </Label>
                 <RadioGroup name="debt_amount" required className="grid md:grid-cols-2 gap-3">
                   <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-colors">
@@ -196,8 +196,8 @@ export const ContactForm = () => {
               </div>
 
               <div>
-                <Label className="text-destructive mb-3 block">
-                  Qual sua renda mensal atual? *
+                <Label className="mb-3 block">
+                  Qual sua renda mensal atual? <span className="text-primary">*</span>
                 </Label>
                 <RadioGroup name="monthly_income" required className="grid md:grid-cols-2 gap-3">
                   <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-colors">
@@ -228,8 +228,8 @@ export const ContactForm = () => {
               </div>
 
               <div>
-                <Label className="text-destructive mb-3 block">
-                  Você possui emprego CLT? *
+                <Label className="mb-3 block">
+                  Você possui emprego CLT? <span className="text-primary">*</span>
                 </Label>
                 <RadioGroup name="has_clt" required className="flex gap-4">
                   <div className="flex items-center space-x-2">
@@ -248,8 +248,8 @@ export const ContactForm = () => {
               </div>
 
               <div>
-                <Label className="text-destructive mb-3 block">
-                  Você já recebeu ajuda médica/psicológica para lidar com jogos? *
+                <Label className="mb-3 block">
+                  Você já recebeu ajuda médica/psicológica para lidar com jogos? <span className="text-primary">*</span>
                 </Label>
                 <RadioGroup name="has_medical_help" required className="flex gap-4">
                   <div className="flex items-center space-x-2">
@@ -268,8 +268,8 @@ export const ContactForm = () => {
               </div>
 
               <div>
-                <Label htmlFor="message" className="text-destructive">
-                  Conte brevemente o que está acontecendo *
+                <Label htmlFor="message">
+                  Conte brevemente o que está acontecendo <span className="text-primary">*</span>
                 </Label>
                 <p className="text-xs text-muted-foreground mt-1 mb-2">
                   Descreva sua situação de forma breve. Lembre-se: tudo é sigiloso.
@@ -291,7 +291,17 @@ export const ContactForm = () => {
                 className="w-full"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Enviando..." : "Quero que um especialista avalie meu caso"}
+                {isSubmitting ? (
+                  <span className="flex items-center gap-2">
+                    <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Enviando...
+                  </span>
+                ) : (
+                  "Quero que um especialista avalie meu caso"
+                )}
               </Button>
 
               <p className="text-xs text-center text-muted-foreground">
