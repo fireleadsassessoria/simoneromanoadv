@@ -4,6 +4,7 @@ import { Services } from "@/components/Services";
 import { Eligibility } from "@/components/Eligibility";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <Eligibility />
       <ContactForm />
       <Footer />
+      <ThemeToggle />
     </div>
   );
 };

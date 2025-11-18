@@ -1,11 +1,19 @@
 import { Card } from "@/components/ui/card";
 import { Badge, CheckCircle2, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 export const About = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
+
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-4 animate-fade-in-up">
+    <section className="py-24 bg-muted/50">
+      <div
+        ref={elementRef}
+        className={`container mx-auto px-4 transition-all duration-700 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-block mb-4">
             <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20">

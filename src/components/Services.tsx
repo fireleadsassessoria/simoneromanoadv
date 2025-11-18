@@ -1,11 +1,19 @@
 import { Card } from "@/components/ui/card";
 import { FileText, Briefcase, Stethoscope, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 export const Services = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
+
   return (
-    <section className="py-24 bg-muted/30">
-      <div className="container mx-auto px-4 animate-fade-in-up">
+    <section className="py-24 bg-background">
+      <div
+        ref={elementRef}
+        className={`container mx-auto px-4 transition-all duration-700 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Como podemos ajudar você
