@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { PhoneInput } from "@/components/ui/phone-input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
@@ -102,13 +103,13 @@ export const ContactForm = () => {
                   <Label htmlFor="phone">
                     Telefone com WhatsApp <span className="text-primary">*</span>
                   </Label>
-                  <Input
+                  <PhoneInput
                     id="phone"
                     name="phone"
-                    type="tel"
                     placeholder="(00) 00000-0000"
                     required
                     className="mt-2"
+                    maxLength={15}
                   />
                 </div>
                 <div>
@@ -131,31 +132,31 @@ export const ContactForm = () => {
                   Qual é o seu principal problema hoje? <span className="text-primary">*</span>
                 </Label>
                 <RadioGroup name="main_problem" required className="space-y-3">
-                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-colors">
+                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
                     <RadioGroupItem value="debt" id="debt" />
                     <Label htmlFor="debt" className="cursor-pointer flex-1">
                       Dívidas por jogos
                     </Label>
                   </div>
-                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-colors">
+                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
                     <RadioGroupItem value="compulsive_loans" id="compulsive_loans" />
                     <Label htmlFor="compulsive_loans" className="cursor-pointer flex-1">
                       Empréstimos falsos de forma compulsiva
                     </Label>
                   </div>
-                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-colors">
+                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
                     <RadioGroupItem value="work_issues" id="work_issues" />
                     <Label htmlFor="work_issues" className="cursor-pointer flex-1">
                       Problemas no trabalho por causa dos jogos
                     </Label>
                   </div>
-                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-colors">
+                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
                     <RadioGroupItem value="commercial_debts" id="commercial_debts" />
                     <Label htmlFor="commercial_debts" className="cursor-pointer flex-1">
                       Busco afeamento comercial
                     </Label>
                   </div>
-                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-colors">
+                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
                     <RadioGroupItem value="other" id="other" />
                     <Label htmlFor="other" className="cursor-pointer flex-1">
                       Outros
@@ -295,7 +296,7 @@ export const ContactForm = () => {
                 type="submit"
                 variant="hero"
                 size="lg"
-                className="w-full"
+                className="w-full hover:scale-105 transition-all duration-300"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
@@ -333,7 +334,7 @@ export const ContactForm = () => {
           <Button
             variant="hero"
             size="lg"
-            className="w-full"
+            className="w-full hover:scale-105 transition-all duration-300"
             onClick={() => window.open("https://wa.me/5511999999999", "_blank")}
           >
             Abrir WhatsApp

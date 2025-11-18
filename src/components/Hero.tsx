@@ -22,22 +22,22 @@ export const Hero = () => {
             </p>
             
             {/* Trust Badges */}
-            <div className="flex flex-wrap gap-6">
-              <div className="flex items-center gap-2">
+            <div className="flex flex-wrap gap-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+              <div className="flex items-center gap-2 hover:scale-110 transition-transform duration-300">
                 <Shield className="w-5 h-5 text-primary" />
                 <span className="text-sm">Atendimento 100% sigiloso</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 hover:scale-110 transition-transform duration-300">
                 <Heart className="w-5 h-5 text-primary" />
                 <span className="text-sm">Especialista em ludopatia</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 hover:scale-110 transition-transform duration-300">
                 <Lock className="w-5 h-5 text-primary" />
                 <span className="text-sm">Sem julgamentos</span>
               </div>
             </div>
             
-            <Button variant="hero" size="lg" className="text-base">
+            <Button variant="hero" size="lg" className="text-base hover:scale-105 transition-all duration-300">
               Quero avaliar meu caso
             </Button>
           </div>

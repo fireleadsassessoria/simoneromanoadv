@@ -68,7 +68,7 @@ export const Services = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Button variant="hero" size="lg">
+          <Button variant="hero" size="lg" className="hover:scale-105 transition-all duration-300">
             Falar com a especialista
           </Button>
         </div>
