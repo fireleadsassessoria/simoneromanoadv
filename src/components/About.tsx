@@ -62,7 +62,7 @@ export const About = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Button variant="hero" size="lg">
+          <Button variant="hero" size="lg" className="hover:scale-105 transition-all duration-300">
             Agendar Consulta
           </Button>
         </div>
