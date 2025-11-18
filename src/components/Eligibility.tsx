@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, CreditCard, Briefcase, HandHelping, DollarSign, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
@@ -12,27 +12,27 @@ export const Eligibility = () => {
     {
       title: "Dívidas em Sites de Apostas",
       description: "Pessoas com dívidas contraídas em sites de apostas online",
-      icon: "💳",
+      icon: CreditCard,
     },
     {
       title: "Trabalhadores CLT",
       description: "Trabalhadores CLT afetados por jogo compulsivo",
-      icon: "💼",
+      icon: Briefcase,
     },
     {
       title: "Dificuldade em Parar",
       description: "Quem já tentou parar mas não conseguiu sozinho",
-      icon: "🤝",
+      icon: HandHelping,
     },
     {
       title: "Empréstimos Compulsivos",
       description: "Pessoas que contraíram empréstimos para jogar",
-      icon: "💰",
+      icon: DollarSign,
     },
     {
       title: "Impacto Familiar",
       description: "Quem teve impactos no trabalho ou família",
-      icon: "👨‍👩‍👧",
+      icon: Users,
     },
   ];
 
@@ -82,16 +82,21 @@ export const Eligibility = () => {
                   transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
                 }}
               >
-                {eligiblePersons.map((person, index) => (
-                  <Card
-                    key={index}
-                    className="min-w-[calc(33.333%-1rem)] p-8 bg-card border-border hover:border-primary/50 transition-all duration-300 hover:scale-105"
-                  >
-                    <div className="text-5xl mb-4">{person.icon}</div>
-                    <h3 className="text-xl font-semibold mb-3">{person.title}</h3>
-                    <p className="text-muted-foreground">{person.description}</p>
-                  </Card>
-                ))}
+                {eligiblePersons.map((person, index) => {
+                  const Icon = person.icon;
+                  return (
+                    <Card
+                      key={index}
+                      className="min-w-[calc(33.333%-1rem)] p-8 bg-card border-border hover:border-primary/50 transition-all duration-300 hover:scale-105"
+                    >
+                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                        <Icon className="w-7 h-7 text-primary" />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-3">{person.title}</h3>
+                      <p className="text-muted-foreground">{person.description}</p>
+                    </Card>
+                  );
+                })}
               </div>
             </div>
 
@@ -116,20 +121,25 @@ export const Eligibility = () => {
 
           {/* Mobile/Tablet List */}
           <div className="md:hidden space-y-4">
-            {eligiblePersons.map((person, index) => (
-              <Card
-                key={index}
-                className="p-6 bg-card border-border hover:border-primary/50 transition-all duration-300"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="text-4xl">{person.icon}</div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">{person.title}</h3>
-                    <p className="text-muted-foreground text-sm">{person.description}</p>
+            {eligiblePersons.map((person, index) => {
+              const Icon = person.icon;
+              return (
+                <Card
+                  key={index}
+                  className="p-6 bg-card border-border hover:border-primary/50 transition-all duration-300"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2">{person.title}</h3>
+                      <p className="text-muted-foreground text-sm">{person.description}</p>
+                    </div>
                   </div>
-                </div>
-              </Card>
-            ))}
+                </Card>
+              );
+            })}
           </div>
 
           {/* Dots Indicator */}
