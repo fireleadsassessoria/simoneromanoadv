@@ -1,7 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 export const Eligibility = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
+
   const eligiblePersons = [
     "Pessoas com dívidas contraídas em sites de apostas",
     "Trabalhadores CLT afetados por jogo compulsivo",
@@ -11,8 +14,13 @@ export const Eligibility = () => {
   ];
 
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-4 animate-fade-in-up">
+    <section className="py-24 bg-muted/50">
+      <div
+        ref={elementRef}
+        className={`container mx-auto px-4 transition-all duration-700 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">

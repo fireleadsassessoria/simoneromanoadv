@@ -6,6 +6,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
 import { Shield } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import {
   Dialog,
   DialogContent,
@@ -18,6 +19,7 @@ export const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showWhatsAppModal, setShowWhatsAppModal] = useState(false);
   const { toast } = useToast();
+  const { elementRef, isVisible } = useScrollAnimation();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -52,8 +54,13 @@ export const ContactForm = () => {
 
   return (
     <>
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4 animate-fade-in-up">
+      <section className="py-20 bg-background">
+        <div
+          ref={elementRef}
+          className={`container mx-auto px-4 transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
               <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
