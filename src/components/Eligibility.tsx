@@ -11,8 +11,8 @@ export const Eligibility = () => {
   ];
 
   return (
-    <section className="py-24 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-background">
+      <div className="container mx-auto px-4 animate-fade-in-up">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -26,7 +26,7 @@ export const Eligibility = () => {
           <Card className="p-8 md:p-12 bg-card border-border">
             <div className="space-y-4">
               {eligiblePersons.map((person, index) => (
-                <div key={index} className="flex items-start gap-4 p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors">
+                <div key={index} className="flex items-start gap-4 p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-all duration-300 hover:scale-105">
                   <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-foreground">{person}</span>
                 </div>

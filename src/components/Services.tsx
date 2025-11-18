@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 
 export const Services = () => {
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-muted/30">
+      <div className="container mx-auto px-4 animate-fade-in-up">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Como podemos ajudar você
@@ -16,7 +16,7 @@ export const Services = () => {
         </div>
         
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <Card className="p-8 bg-card border-border hover:border-primary/50 transition-all group">
+          <Card className="p-8 bg-card border-border hover:border-primary/50 transition-all group hover:scale-105 duration-300">
             <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
               <FileText className="w-7 h-7 text-primary" />
             </div>
@@ -30,7 +30,7 @@ export const Services = () => {
             </div>
           </Card>
           
-          <Card className="p-8 bg-card border-border hover:border-primary/50 transition-all group">
+          <Card className="p-8 bg-card border-border hover:border-primary/50 transition-all group hover:scale-105 duration-300">
             <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
               <Briefcase className="w-7 h-7 text-primary" />
             </div>
@@ -44,7 +44,7 @@ export const Services = () => {
             </div>
           </Card>
           
-          <Card className="p-8 bg-card border-border hover:border-primary/50 transition-all group">
+          <Card className="p-8 bg-card border-border hover:border-primary/50 transition-all group hover:scale-105 duration-300">
             <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
               <Stethoscope className="w-7 h-7 text-primary" />
             </div>

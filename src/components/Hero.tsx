@@ -11,7 +11,7 @@ export const Hero = () => {
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 animate-slide-in-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               Existe um caminho legal para sair das dívidas causadas por jogos
             </h1>
@@ -43,7 +43,7 @@ export const Hero = () => {
           </div>
           
           {/* Right Content - Image */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex justify-center lg:justify-end animate-slide-in-right">
             <div className="relative">
               <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-3xl" />
               <div className="relative border-2 border-primary rounded-2xl overflow-hidden shadow-2xl">
