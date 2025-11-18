@@ -6,6 +6,13 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 export const About = () => {
   const { elementRef, isVisible } = useScrollAnimation();
 
+  const scrollToForm = () => {
+    const formSection = document.getElementById('contact-form');
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section className="py-24 bg-muted/50">
       <div
@@ -62,7 +69,7 @@ export const About = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Button variant="hero" size="lg" className="hover:scale-105 transition-all duration-300">
+          <Button variant="hero" size="lg" className="hover:scale-105 transition-all duration-300" onClick={scrollToForm}>
             Agendar Consulta
           </Button>
         </div>

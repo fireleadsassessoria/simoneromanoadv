@@ -55,7 +55,7 @@ export const ContactForm = () => {
 
   return (
     <>
-      <section className="py-20 bg-background">
+      <section id="contact-form" className="py-20 bg-background">
         <div
           ref={elementRef}
           className={`container mx-auto px-4 transition-all duration-700 ${
