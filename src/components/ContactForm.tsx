@@ -171,12 +171,6 @@ export const ContactForm = () => {
                 </Label>
                 <RadioGroup name="debt_amount" required className="grid md:grid-cols-2 gap-3">
                   <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-colors">
-                    <RadioGroupItem value="0-5k" id="0-5k" />
-                    <Label htmlFor="0-5k" className="cursor-pointer flex-1">
-                      Até R$ 5 mil
-                    </Label>
-                  </div>
-                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-colors">
                     <RadioGroupItem value="5k-20k" id="5k-20k" />
                     <Label htmlFor="5k-20k" className="cursor-pointer flex-1">
                       R$ 5 mil - R$ 20 mil
@@ -208,12 +202,6 @@ export const ContactForm = () => {
                   Qual sua renda mensal atual? <span className="text-primary">*</span>
                 </Label>
                 <RadioGroup name="monthly_income" required className="grid md:grid-cols-2 gap-3">
-                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-colors">
-                    <RadioGroupItem value="1.5k-3k" id="1.5k-3k" />
-                    <Label htmlFor="1.5k-3k" className="cursor-pointer flex-1">
-                      R$ 1.500 - R$ 3.000
-                    </Label>
-                  </div>
                   <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-colors">
                     <RadioGroupItem value="3k-5k" id="3k-5k" />
                     <Label htmlFor="3k-5k" className="cursor-pointer flex-1">
