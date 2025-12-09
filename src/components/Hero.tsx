@@ -24,7 +24,7 @@ export const Hero = () => {
             </h1>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Oferecemos consultoria jurídica especializada para garantir os direitos de famílias de autistas, com foco em benefícios como BPC LOAS, saque do FGTS, auxílio medicamento, solicitações negadas por planos de saúde, isenção da
+ Oferecemos consultoria jurídica especializada para garantir os direitos de famílias de autistas, com foco em benefícios como BPC LOAS, saque do FGTS, auxílio medicamento, solicitações negadas por planos de saúde, isenção da taxa de IPVA e imposto de renda.
             </p>
 
             {/* Trust Badges */}
