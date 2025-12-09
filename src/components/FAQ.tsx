@@ -16,30 +16,25 @@ export const FAQ = () => {
         "A primeira consulta é totalmente sigilosa e gratuita. Analisamos seu caso, identificamos as possibilidades jurídicas e traçamos um plano de ação personalizado para sua situação.",
     },
     {
-      question: "Quanto tempo leva o processo de revisão de empréstimos?",
+      question: "Quanto tempo em média levam os processos?",
       answer:
         "O tempo varia de acordo com cada caso, mas geralmente leva de 3 a 6 meses. Trabalhamos para agilizar ao máximo, mantendo você informado em todas as etapas do processo.",
     },
     {
       question: "Preciso ter laudo médico para começar?",
       answer:
-        "Não é necessário ter laudo médico inicialmente. Podemos orientá-lo sobre como obter o diagnóstico adequado e encaminhá-lo para profissionais especializados em ludopatia.",
+        "Não é necessário ter laudo médico inicialmente. Podemos orientá-lo sobre como obter o diagnóstico adequado e encaminhá-lo para profissionais especializados em saúde mental.",
     },
     {
-      question: "O sigilo profissional é realmente garantido?",
+      question: "Como funciona o atendimento humanizado?",
       answer:
-        "Sim, absolutamente. Como advogada, sou obrigada por lei a manter sigilo total sobre todas as informações compartilhadas. Suas informações estão protegidas pelo sigilo profissional previsto no Código de Ética da OAB.",
+        "Cada caso é analisado de forma personalizada, entendendo a necessidade real de cada família, com todo o apoio que a situação demanda.",
     },
     {
       question: "Quais documentos preciso apresentar?",
       answer:
         "Na primeira consulta, basta trazer RG, CPF e comprovante de residência. Documentos adicionais como comprovantes de empréstimos e extratos bancários podem ser solicitados posteriormente, conforme a estratégia definida para seu caso.",
-    },
-    {
-      question: "Como funciona o afastamento remunerado por CLT?",
-      answer:
-        "Com o laudo médico atestando ludopatia (CID F63.0), você pode solicitar afastamento do trabalho mantendo sua remuneração através do INSS. Orientamos todo o processo e fornecemos o suporte jurídico necessário.",
-    },
+    }
   ];
 
   return (

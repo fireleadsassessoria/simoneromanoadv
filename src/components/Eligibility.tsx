@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
-import { ChevronLeft, ChevronRight, CreditCard, Briefcase, HandHelping, DollarSign, Users } from "lucide-react";
+import { ChevronLeft, ChevronRight, Coins, Receipt, HandCoins, HeartPulse, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
@@ -10,29 +10,24 @@ export const Eligibility = () => {
 
   const eligiblePersons = [
     {
-      title: "Dívidas em Sites de Apostas",
-      description: "Pessoas com dívidas contraídas em sites de apostas online",
-      icon: CreditCard,
+      title: "Responsáveis de baixa renda",
+      description: "Pais de autistas que buscam o benefício de prestação continuada (auxílio mensal).",
+      icon: Coins,
     },
     {
-      title: "Trabalhadores CLT",
-      description: "Trabalhadores CLT afetados por jogo compulsivo",
-      icon: Briefcase,
+      title: "Saque do FGTS",
+      description: "Em caso de família com renda de até meio salário mínimo por pessoa.",
+      icon: Receipt,
     },
     {
-      title: "Dificuldade em Parar",
-      description: "Quem já tentou parar mas não conseguiu sozinho",
-      icon: HandHelping,
+      title: "Pais de autistas que buscam isenção de benefícios",
+      description: "IPVA, imposto de renda e outros.",
+      icon: HandCoins,
     },
     {
-      title: "Empréstimos Compulsivos",
-      description: "Pessoas que contraíram empréstimos para jogar",
-      icon: DollarSign,
-    },
-    {
-      title: "Impacto Familiar",
-      description: "Quem teve impactos no trabalho ou família",
-      icon: Users,
+      title: "Responsáveis assistidos por plano de saúde",
+      description: "Se o plano negar pedidos ou suporte.",
+      icon: HeartPulse,
     },
   ];
 
@@ -59,9 +54,8 @@ export const Eligibility = () => {
     <section className="py-24 bg-muted/50">
       <div
         ref={elementRef}
-        className={`container mx-auto px-4 transition-all duration-700 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}
+        className={`container mx-auto px-4 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
       >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
@@ -69,7 +63,7 @@ export const Eligibility = () => {
               Quem pode ser atendido?
             </h2>
             <p className="text-lg text-muted-foreground">
-              Atendemos pessoas em diferentes situações relacionadas ao jogo patológico
+              Pais e responsáveis de autistas em diferentes contextos.
             </p>
           </div>
 
@@ -148,11 +142,10 @@ export const Eligibility = () => {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index === currentIndex
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex
                     ? "bg-primary w-8"
                     : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
-                }`}
+                  }`}
                 aria-label={`Ir para slide ${index + 1}`}
               />
             ))}

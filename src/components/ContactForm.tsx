@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { PhoneInput } from "@/components/ui/phone-input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { Shield } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
@@ -58,9 +59,8 @@ export const ContactForm = () => {
       <section id="contact-form" className="py-20 bg-background">
         <div
           ref={elementRef}
-          className={`container mx-auto px-4 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`container mx-auto px-4 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
         >
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
@@ -129,72 +129,52 @@ export const ContactForm = () => {
 
               <div>
                 <Label className="mb-3 block">
-                  Qual é o seu principal problema hoje? <span className="text-primary">*</span>
+                  Qual benefício você gostaria de garantir? <span className="text-primary">*</span>
                 </Label>
-                <RadioGroup name="main_problem" required className="space-y-3">
-                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
-                    <RadioGroupItem value="debt" id="debt" />
-                    <Label htmlFor="debt" className="cursor-pointer flex-1">
-                      Dívidas por jogos
-                    </Label>
-                  </div>
-                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
-                    <RadioGroupItem value="compulsive_loans" id="compulsive_loans" />
-                    <Label htmlFor="compulsive_loans" className="cursor-pointer flex-1">
-                      Empréstimos falsos de forma compulsiva
-                    </Label>
-                  </div>
-                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
-                    <RadioGroupItem value="work_issues" id="work_issues" />
-                    <Label htmlFor="work_issues" className="cursor-pointer flex-1">
-                      Problemas no trabalho por causa dos jogos
-                    </Label>
-                  </div>
-                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
-                    <RadioGroupItem value="commercial_debts" id="commercial_debts" />
-                    <Label htmlFor="commercial_debts" className="cursor-pointer flex-1">
-                      Busco afeamento comercial
-                    </Label>
-                  </div>
-                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
-                    <RadioGroupItem value="other" id="other" />
-                    <Label htmlFor="other" className="cursor-pointer flex-1">
-                      Outros
-                    </Label>
-                  </div>
-                </RadioGroup>
-              </div>
 
-              <div>
-                <Label className="mb-3 block">
-                  Qual o valor aproximado das dívidas/empréstimos? <span className="text-primary">*</span>
-                </Label>
-                <RadioGroup name="debt_amount" required className="grid md:grid-cols-2 gap-3">
-                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-colors">
-                    <RadioGroupItem value="5k-20k" id="5k-20k" />
-                    <Label htmlFor="5k-20k" className="cursor-pointer flex-1">
-                      R$ 5 mil - R$ 20 mil
+                <div className="space-y-3">
+
+                  {/* BPC LOAS */}
+                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
+                    <Checkbox id="bpc_loas" name="benefits" value="bpc_loas" />
+                    <Label htmlFor="bpc_loas" className="cursor-pointer flex-1">
+                      BPC LOAS
                     </Label>
                   </div>
-                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-colors">
-                    <RadioGroupItem value="20k-50k" id="20k-50k" />
-                    <Label htmlFor="20k-50k" className="cursor-pointer flex-1">
-                      R$ 20 mil - R$ 50 mil
+
+                  {/* Isenção de IPVA */}
+                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
+                    <Checkbox id="ipva" name="benefits" value="ipva" />
+                    <Label htmlFor="ipva" className="cursor-pointer flex-1">
+                      Isenção de IPVA
                     </Label>
                   </div>
-                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-colors">
-                    <RadioGroupItem value="50k-100k" id="50k-100k" />
-                    <Label htmlFor="50k-100k" className="cursor-pointer flex-1">
-                      R$ 50 mil - R$ 100 mil
+
+                  {/* Isenção de Imposto de Renda */}
+                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
+                    <Checkbox id="ir" name="benefits" value="ir" />
+                    <Label htmlFor="ir" className="cursor-pointer flex-1">
+                      Isenção de Imposto de Renda
                     </Label>
                   </div>
-                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-colors">
-                    <RadioGroupItem value="100k+" id="100k+" />
-                    <Label htmlFor="100k+" className="cursor-pointer flex-1">
-                      Mais de R$ 100 mil
+
+                  {/* Saque do FGTS */}
+                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
+                    <Checkbox id="fgts" name="benefits" value="fgts" />
+                    <Label htmlFor="fgts" className="cursor-pointer flex-1">
+                      Saque do FGTS
                     </Label>
                   </div>
-                </RadioGroup>
+
+                  {/* Medicamentos e Planos de Saúde Negados */}
+                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
+                    <Checkbox id="medicamentos" name="benefits" value="medicamentos" />
+                    <Label htmlFor="medicamentos" className="cursor-pointer flex-1">
+                      Medicamentos e Planos de Saúde Negados
+                    </Label>
+                  </div>
+
+                </div>
               </div>
 
               <div>
@@ -204,20 +184,20 @@ export const ContactForm = () => {
                 <RadioGroup name="monthly_income" required className="grid md:grid-cols-2 gap-3">
                   <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-colors">
                     <RadioGroupItem value="3k-5k" id="3k-5k" />
+                    <Label htmlFor="1k-3k" className="cursor-pointer flex-1">
+                      R$ 1.500 - R$ 3.000
+                    </Label>
+                  </div>
+                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-colors">
+                    <RadioGroupItem value="5k-10k" id="5k-10k" />
                     <Label htmlFor="3k-5k" className="cursor-pointer flex-1">
                       R$ 3.000 - R$ 5.000
                     </Label>
                   </div>
                   <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-colors">
-                    <RadioGroupItem value="5k-10k" id="5k-10k" />
-                    <Label htmlFor="5k-10k" className="cursor-pointer flex-1">
-                      R$ 5.000 - R$ 10.000
-                    </Label>
-                  </div>
-                  <div className="flex items-center space-x-2 border border-border rounded-lg p-4 hover:bg-accent/50 transition-colors">
                     <RadioGroupItem value="10k+" id="10k+" />
-                    <Label htmlFor="10k+" className="cursor-pointer flex-1">
-                      Acima de R$ 10.000
+                    <Label htmlFor="5k+" className="cursor-pointer flex-1">
+                      Acima de R$ 5.000
                     </Label>
                   </div>
                 </RadioGroup>
@@ -244,37 +224,16 @@ export const ContactForm = () => {
               </div>
 
               <div>
-                <Label className="mb-3 block">
-                  Você já recebeu ajuda médica/psicológica para lidar com jogos? <span className="text-primary">*</span>
-                </Label>
-                <RadioGroup name="has_medical_help" required className="flex gap-4">
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="yes" id="help-yes" />
-                    <Label htmlFor="help-yes" className="cursor-pointer">
-                      Sim
-                    </Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="no" id="help-no" />
-                    <Label htmlFor="help-no" className="cursor-pointer">
-                      Não
-                    </Label>
-                  </div>
-                </RadioGroup>
-              </div>
-
-              <div>
                 <Label htmlFor="message">
-                  Conte brevemente o que está acontecendo <span className="text-primary">*</span>
+                  Conte brevemente o que está acontecendo
                 </Label>
                 <p className="text-xs text-muted-foreground mt-1 mb-2">
-                  Descreva sua situação de forma breve. Lembre-se: tudo é sigiloso.
+                  Descreva sua situação de forma breve.
                 </p>
                 <Textarea
                   id="message"
                   name="message"
                   placeholder="Descreva sua situação..."
-                  required
                   rows={4}
                   className="resize-none"
                 />
